@@ -3,10 +3,12 @@ import 'package:mathappcd/constants/widgets_constants.dart';
 
 class SquareBtn extends StatefulWidget {
   final String text;
+  final Widget directTo;
 
   const SquareBtn({
     Key? key,
     required this.text,
+    required this.directTo,
   }) : super(key: key);
 
   @override
@@ -17,7 +19,17 @@ class _SquareBtnState extends State<SquareBtn> {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context,
+          //MaterialPageRoute(builder: (context) => widget.directTo),
+          PageRouteBuilder(
+            pageBuilder: (_, __, ___) => widget.directTo,
+            transitionsBuilder: (_, a, __, c) =>
+                ScaleTransition(scale: a, child: c),
+          ),
+        );
+      },
       onLongPress: () {},
       onHover: (hover) {},
       onFocusChange: (changed) {},
