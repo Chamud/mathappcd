@@ -18,7 +18,7 @@ class CustAppBarState extends State<CustAppBar> {
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(widget.title),
-      backgroundColor: WidgetConstants.AppBarBgClr,
+      backgroundColor: WidgetConstants.appBarBgClr,
     );
   }
 }

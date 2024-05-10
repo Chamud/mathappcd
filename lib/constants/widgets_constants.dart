@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 
 class WidgetConstants {
   // Home
-  static const double bannerMinHeight = 400;
+  static const double bannerHeight = 300;
+  static const double homeBtnsMinHeight = 300;
+  static const double homeBtnsMaxHeight = 400;
+  static const int smallScreenWidthSize = 600;
 
   // Square Button
   static const double sqrBtnRadius = 40;
@@ -24,5 +27,5 @@ class WidgetConstants {
   static const Color lngBtnFgColor = Color.fromARGB(170, 255, 255, 255);
 
   // App Bar
-  static const Color AppBarBgClr = Color.fromARGB(170, 108, 88, 84);
+  static const Color appBarBgClr = Color.fromARGB(170, 108, 88, 84);
 }

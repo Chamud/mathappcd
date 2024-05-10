@@ -6,7 +6,11 @@ import 'package:mathappcd/widgets/app_bar.dart';
 import 'package:mathappcd/widgets/square_btn.dart';
 
 extension ContextExtension on BuildContext {
-  bool get isSmallScreen => MediaQuery.of(this).size.width < 600;
+  bool get isSmallWidth =>
+      MediaQuery.of(this).size.width < WidgetConstants.smallScreenWidthSize;
+  bool get isSmallheight =>
+      MediaQuery.of(this).size.height <
+      WidgetConstants.bannerHeight + WidgetConstants.homeBtnsMaxHeight;
 }
 
 class HomePage extends StatefulWidget {
@@ -17,66 +21,76 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  Widget getBanner() {
+    return Container(
+      alignment: Alignment.center,
+      child: Container(
+        constraints: const BoxConstraints(
+            maxHeight: WidgetConstants.bannerHeight,
+            minHeight: WidgetConstants.bannerHeight),
+        child: const Center(
+          child: Text(
+            "Graph or something to show the progress",
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget getHomeButtons() {
+    return Container(
+      constraints: const BoxConstraints(
+          minHeight: WidgetConstants.homeBtnsMinHeight,
+          maxHeight: WidgetConstants.homeBtnsMaxHeight),
+      child: Center(
+        child: GridView.count(
+          shrinkWrap: true,
+          padding: const EdgeInsets.all(WidgetConstants.sqrBtnPadding),
+          mainAxisSpacing: 20,
+          crossAxisSpacing: 20,
+          crossAxisCount: context.isSmallWidth ? 2 : 4,
+          children: const [
+            SquareBtn(
+              text: "A",
+              directTo: SectionA(),
+            ),
+            SquareBtn(
+              text: "B",
+              directTo: SectionB(),
+            ),
+            SquareBtn(
+              text: "C",
+              directTo: SectionA(),
+            ),
+            SquareBtn(
+              text: "D",
+              directTo: SectionB(),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustAppBar(
         title: "App",
       ),
-      body: Align(
-        alignment: Alignment.bottomCenter,
-        child: SingleChildScrollView(
-          physics: const AlwaysScrollableScrollPhysics(),
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height <
-                    WidgetConstants.bannerMinHeight + 5
-                ? WidgetConstants.bannerMinHeight + 100
-                : MediaQuery.of(context).size.height,
-            child: Column(
+      body: context.isSmallheight
+          ? ListView(
               children: [
-                Expanded(
-                  child: Container(
-                    constraints: const BoxConstraints(
-                        minHeight: WidgetConstants.bannerMinHeight),
-                    color: Colors.grey[200],
-                    child: const Center(
-                        child: Column(
-                      children: [
-                        Text("Graph"),
-                      ],
-                    )),
-                  ),
-                ),
-                GridView.count(
-                  shrinkWrap: true,
-                  padding: const EdgeInsets.all(WidgetConstants.sqrBtnPadding),
-                  mainAxisSpacing: 20,
-                  crossAxisSpacing: 20,
-                  crossAxisCount: context.isSmallScreen ? 2 : 4,
-                  children: const [
-                    SquareBtn(
-                      text: "A",
-                      directTo: SectionA(),
-                    ),
-                    SquareBtn(
-                      text: "B",
-                      directTo: SectionB(),
-                    ),
-                    SquareBtn(
-                      text: "C",
-                      directTo: SectionA(),
-                    ),
-                    SquareBtn(
-                      text: "D",
-                      directTo: SectionB(),
-                    ),
-                  ],
-                ),
+                getBanner(),
+                getHomeButtons(),
+              ],
+            )
+          : Column(
+              children: [
+                Expanded(child: getBanner()),
+                getHomeButtons(),
               ],
             ),
-          ),
-        ),
-      ),
     );
   }
 }
