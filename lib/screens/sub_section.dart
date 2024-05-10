@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:mathappcd/widgets/app_bar.dart';
 
-class SectionB extends StatefulWidget {
-  const SectionB({Key? key}) : super(key: key);
+class SubSection extends StatefulWidget {
+  const SubSection({Key? key}) : super(key: key);
 
   @override
-  State<SectionB> createState() => _SectionBState();
+  State<SubSection> createState() => _SubSectionState();
 }
 
-class _SectionBState extends State<SectionB> {
+class _SubSectionState extends State<SubSection> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -23,7 +23,7 @@ class _SectionBState extends State<SectionB> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustAppBar(
-        title: "Section B",
+        title: "Sub Section",
       ),
       body: ListView(
         children: [],

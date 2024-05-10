@@ -22,12 +22,11 @@ class _SquareBtnState extends State<SquareBtn> {
       onPressed: () {
         Navigator.push(
           context,
-          //MaterialPageRoute(builder: (context) => widget.directTo),
           PageRouteBuilder(
-            pageBuilder: (_, __, ___) => widget.directTo,
-            transitionsBuilder: (_, a, __, c) =>
-                ScaleTransition(scale: a, child: c),
-          ),
+              pageBuilder: (_, __, ___) => widget.directTo,
+              transitionsBuilder: (_, a, __, c) =>
+                  ScaleTransition(scale: a, child: c),
+              transitionDuration: const Duration(milliseconds: 200)),
         );
       },
       onLongPress: () {},

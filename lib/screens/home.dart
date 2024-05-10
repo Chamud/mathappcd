@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mathappcd/constants/widgets_constants.dart';
-import 'package:mathappcd/screens/sectionA.dart';
-import 'package:mathappcd/screens/sectionB.dart';
+import 'package:mathappcd/screens/section.dart';
+import 'package:mathappcd/screens/sub_section.dart';
 import 'package:mathappcd/widgets/app_bar.dart';
+import 'package:mathappcd/widgets/long_btn.dart';
 import 'package:mathappcd/widgets/square_btn.dart';
 
 extension ContextExtension on BuildContext {
@@ -21,6 +22,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Widget> getSectionAItems() {
+    return [
+      LongBtn(text: "Q1", directTo: SubSection()),
+      LongBtn(text: "Q2", directTo: SubSection()),
+      LongBtn(text: "Q3", directTo: SubSection()),
+      LongBtn(text: "Q4", directTo: SubSection()),
+      LongBtn(text: "Q5", directTo: SubSection()),
+      LongBtn(text: "Q6", directTo: SubSection()),
+      LongBtn(text: "Q7", directTo: SubSection()),
+    ];
+  }
+
   Widget getBanner() {
     return Container(
       alignment: Alignment.center,
@@ -49,22 +62,22 @@ class _HomePageState extends State<HomePage> {
           mainAxisSpacing: 20,
           crossAxisSpacing: 20,
           crossAxisCount: context.isSmallWidth ? 2 : 4,
-          children: const [
+          children: [
             SquareBtn(
               text: "A",
-              directTo: SectionA(),
+              directTo: Section(heading: "SectionA", items: getSectionAItems()),
             ),
             SquareBtn(
               text: "B",
-              directTo: SectionB(),
+              directTo: Section(heading: "SectionB", items: getSectionAItems()),
             ),
             SquareBtn(
               text: "C",
-              directTo: SectionA(),
+              directTo: Section(heading: "SectionC", items: getSectionAItems()),
             ),
             SquareBtn(
               text: "D",
-              directTo: SectionB(),
+              directTo: Section(heading: "SectionD", items: getSectionAItems()),
             ),
           ],
         ),
