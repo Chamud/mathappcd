@@ -1,6 +1,7 @@
 class ModelSubSection {
   final String id;
-  final String title;
+  final String name;
+  final String number;
 
-  ModelSubSection({required this.id, required this.title});
+  ModelSubSection({required this.id, required this.number, required this.name});
 }

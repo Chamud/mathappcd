@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:mathappcd/models/subsection.dart';
 
 class SectionsProvider with ChangeNotifier {
-  ModelSubSection _item = ModelSubSection(id: "", title: "");
+  ModelSubSection _item = ModelSubSection(id: "", number: "", name: "");
   List<ModelSubSection> _items = [];
 
   ModelSubSection get item => _item;

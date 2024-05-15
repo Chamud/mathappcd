@@ -1,0 +1,177 @@
+[
+  {
+    "Number": "第５章",
+    "Name": "データの分析",
+    "Id": "14RtPaqY6dwZ9YKdNje0"
+  },
+  {
+    "Number": "第１章",
+    "Name": "数と式",
+    "Id": "AHadXSPP4K1wk1c1fzDu",
+    "SubSections": [
+      {
+        "Name": "実数",
+        "Number": "第２節",
+        "Id": "4t092te4OW29qjb2SyEQ"
+      },
+      {
+        "Number": "第３節",
+        "Name": "１次不等式",
+        "Id": "NK5D0BYMZitSOU7kA5l9"
+      },
+      {
+        "Name": "式の計算",
+        "Number": "第１節",
+        "Id": "ThG4l5vbl3rjT0pqFiHj",
+        "QuestionSets": [
+          {
+            "Number": "1",
+            "Name": "整式",
+            "Id": "KUIcGDdkJEomskRUP5FY",
+            "Questions": [
+              {
+                "Advanced": true,
+                "Number": "2",
+                "SubQuestion": "3",
+                "Question": "単項式(2)",
+                "Id": "tannkoushiki2",
+                "SubQuestions": [
+                  {
+                    "Answer": "4",
+                    "Question": "単項式 -axy^2 について、次数を求めよ。",
+                    "Number": "2",
+                    "Id": "2tDcsdnTkpbtQ2hPM2qAj"
+                  },
+                  {
+                    "Number": "3",
+                    "Answer": "7",
+                    "Question": "単項式 -5abx^2y^3 について、次数を求めよ。",
+                    "Id": "35X1I0RUbQfVZ1ms34Msx"
+                  },
+                  {
+                    "Question": "単項式 3ax について、次数を求めよ。",
+                    "Answer": "2",
+                    "Number": "1",
+                    "Id": "tannkoushiki2sqs1"
+                  }
+                ]
+              },
+              {
+                "Question": "単項式(1)",
+                "Number": "1",
+                "SubQuestion": "6",
+                "Advanced": true,
+                "Id": "yY9BJ9BYG5LUJJes7HQp",
+                "SubQuestions": [
+                  {
+                    "Answer": "3",
+                    "Number": "１",
+                    "Question": "単項式 3ax について、係数を求めよ。",
+                    "Id": "VAwr8JBu5JBg5BhPPgig"
+                  },
+                  {
+                    "Number": "3",
+                    "Question": "単項式 -5abx^2y^3 について、係数を求めよ。",
+                    "Answer": "-5",
+                    "Id": "WykEwGKAZnLSuGG5Fxjl3"
+                  },
+                  {
+                    "Answer": "-1",
+                    "Number": "2",
+                    "Question": "単項式 -axy^2 について、係数を求めよ。",
+                    "Id": "dsb0xj6wEbRoDuofN2jM2"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Name": "整式の加法と減法および乗法",
+            "Number": "2",
+            "Id": "Q6y3Yx8GO1pegx14jvFQ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "図形と計量",
+    "Number": "第４章",
+    "Id": "B7iaFy4eNmjAuiipKjmX"
+  },
+  {
+    "Name": "２次関数",
+    "Number": "第３章",
+    "Id": "CWVx1YVYUmOoffnRApSg",
+    "SubSections": [
+      {
+        "Number": "第１節",
+        "Name": "２次関数とグラフ",
+        "Id": "98jh0bcJ4hRsdQXsW62M",
+        "QuestionSets": [
+          {
+            "Name": "２次関数のグラフ",
+            "Number": "2",
+            "Id": "C0QgzT338NBAbBPbL3oH"
+          },
+          {
+            "Number": "4",
+            "Name": "２次関数の決定",
+            "Id": "YLYcWbDf18p9oRT98yfe"
+          },
+          {
+            "Name": "２次関数の最大と最小",
+            "Number": "3",
+            "Id": "rBapzd1VADlVJ64V8VE5"
+          },
+          {
+            "Number": "1",
+            "Name": "関数とグラフ",
+            "Id": "tMPHDHrZkx00XRtaXplG"
+          }
+        ]
+      },
+      {
+        "Number": "第２節",
+        "Name": "２次方程式と２次不等式",
+        "Id": "xoFBKQJPZHuvT5ds3bRR"
+      }
+    ]
+  },
+  {
+    "Name": "集合と命題",
+    "Number": "第２章",
+    "Id": "mLkNWj613xZK5ZNREV9z",
+    "SubSections": [
+      {
+        "Number": "第１節",
+        "Name": "集合",
+        "Id": "f9bSAtBdFosojQVWugFC",
+        "QuestionSets": [
+          {
+            "Name": "集合",
+            "Number": "1",
+            "Id": "lrlTu64aobTviiMa27a7"
+          }
+        ]
+      },
+      {
+        "Number": "第２節",
+        "Name": "命題",
+        "Id": "wPVyokSZsNBeCOtwGWFv",
+        "QuestionSets": [
+          {
+            "Name": "命題と証明",
+            "Number": "2",
+            "Id": "UuNukYNRcliZLyxcCwnZ"
+          },
+          {
+            "Number": "1",
+            "Name": "命題と条件",
+            "Id": "aNTwD2PIL3e3zAnM1sLS"
+          }
+        ]
+      }
+    ]
+  }
+]
