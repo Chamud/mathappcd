@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
+import 'package:mathappcd/constants/string_constants.dart';
 import 'package:mathappcd/models/section.dart';
+import 'package:mathappcd/database/db.dart';
 
 class SectionsProvider with ChangeNotifier {
   ModelSection _item = ModelSection(id: "", number: "", name: "");
@@ -20,6 +22,11 @@ class SectionsProvider with ChangeNotifier {
 
   void removeItem(String id) {
     _items.removeWhere((item) => item.id == id);
+    notifyListeners();
+  }
+
+  void refreshListFromDB() {
+    // Database.getDB(StringConstants.dbA);
     notifyListeners();
   }
 
