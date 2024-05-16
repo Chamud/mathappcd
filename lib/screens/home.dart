@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mathappcd/constants/string_constants.dart';
 import 'package:mathappcd/constants/widgets_constants.dart';
+import 'package:mathappcd/database/db.dart';
 import 'package:mathappcd/screens/section.dart';
 import 'package:mathappcd/screens/sub_section.dart';
 import 'package:mathappcd/widgets/app_bar.dart';
@@ -79,6 +81,9 @@ class _HomePageState extends State<HomePage> {
               text: "D",
               directTo: Section(heading: "SectionD", items: getSectionAItems()),
             ),
+            TextButton(
+                onPressed: () => {Database.getDB(StringConstants.dbA)},
+                child: Text("Refresh DB"))
           ],
         ),
       ),
