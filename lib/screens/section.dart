@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:mathappcd/models/section.dart';
+import 'package:mathappcd/screens/sub_section.dart';
 import 'package:mathappcd/widgets/app_bar.dart';
+import 'package:mathappcd/widgets/long_btn.dart';
 
 class Section extends StatefulWidget {
-  final List<Widget> items;
+  final List<ModelSection> items;
   final String heading;
 
   const Section({Key? key, required this.heading, required this.items})
@@ -25,12 +28,30 @@ class _SectionState extends State<Section> {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> getListItems(List<ModelSection> sections) {
+      List<LongBtn> btns = [];
+      for (var each in sections) {
+        LongBtn btn = LongBtn(
+            number: each.number,
+            text: each.name,
+            directTo: SubSection(
+              items: each.subsections,
+              title: "${each.number}  -  ${each.name}",
+            ));
+        btns.add(btn);
+      }
+      return btns;
+    }
+
     return Scaffold(
       appBar: CustAppBar(
         title: widget.heading,
       ),
-      body: ListView(
-        children: widget.items,
+      body: Container(
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+        child: ListView(
+          children: getListItems(widget.items),
+        ),
       ),
     );
   }

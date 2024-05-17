@@ -15,6 +15,8 @@ class WidgetConstants {
   static const double sqrBtnTxtSize = 22;
   static const Color sqrBtnTxtColor = Color.fromARGB(170, 0, 0, 0);
   static const Color sqrBtnBgColor = Color.fromARGB(170, 241, 165, 150);
+  static const Color sqrBtnBgColorDisabled = Color.fromARGB(170, 251, 216, 208);
+  static const Color sqrBtnBgColorLock = Color.fromARGB(170, 86, 86, 86);
   static const Color sqrBtnFgColor = Color.fromARGB(170, 255, 255, 255);
 
   // Long Button

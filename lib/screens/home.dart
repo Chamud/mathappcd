@@ -3,9 +3,7 @@ import 'package:mathappcd/constants/string_constants.dart';
 import 'package:mathappcd/constants/widgets_constants.dart';
 import 'package:mathappcd/database/db.dart';
 import 'package:mathappcd/screens/section.dart';
-import 'package:mathappcd/screens/sub_section.dart';
 import 'package:mathappcd/widgets/app_bar.dart';
-import 'package:mathappcd/widgets/long_btn.dart';
 import 'package:mathappcd/widgets/square_btn.dart';
 
 extension ContextExtension on BuildContext {
@@ -24,18 +22,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Widget> getSectionAItems() {
-    return [
-      LongBtn(text: "Q1", directTo: SubSection()),
-      LongBtn(text: "Q2", directTo: SubSection()),
-      LongBtn(text: "Q3", directTo: SubSection()),
-      LongBtn(text: "Q4", directTo: SubSection()),
-      LongBtn(text: "Q5", directTo: SubSection()),
-      LongBtn(text: "Q6", directTo: SubSection()),
-      LongBtn(text: "Q7", directTo: SubSection()),
-    ];
-  }
-
   Widget getBanner() {
     return Container(
       alignment: Alignment.center,
@@ -66,20 +52,35 @@ class _HomePageState extends State<HomePage> {
           crossAxisCount: context.isSmallWidth ? 2 : 4,
           children: [
             SquareBtn(
-              text: "A",
-              directTo: Section(heading: "SectionA", items: getSectionAItems()),
+              text: SC.section1,
+              isAvailable: Database.database1.isNotEmpty,
+              directTo:
+                  Section(heading: SC.section1, items: Database.database1),
             ),
             SquareBtn(
-              text: "B",
-              directTo: Section(heading: "SectionB", items: getSectionAItems()),
+              text: SC.sectionA,
+              isAvailable: Database.databaseA.isNotEmpty,
+              directTo:
+                  Section(heading: SC.sectionA, items: Database.databaseA),
             ),
             SquareBtn(
-              text: "C",
-              directTo: Section(heading: "SectionC", items: getSectionAItems()),
+              text: SC.section2,
+              isAvailable: Database.database2.isNotEmpty,
+              directTo:
+                  Section(heading: SC.section2, items: Database.database2),
             ),
-            TextButton(
-                onPressed: () => {Database.setAllDB()},
-                child: Text("Refresh DB"))
+            SquareBtn(
+              text: SC.section3,
+              isAvailable: Database.database3.isNotEmpty,
+              directTo:
+                  Section(heading: SC.section3, items: Database.database3),
+            ),
+            SquareBtn(
+              text: SC.sectionB,
+              isAvailable: Database.databaseB.isNotEmpty,
+              directTo:
+                  Section(heading: SC.sectionB, items: Database.databaseA),
+            ),
           ],
         ),
       ),
@@ -90,7 +91,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustAppBar(
-        title: "App",
+        title: SC.mathAppTitle,
       ),
       body: context.isSmallheight
           ? ListView(
@@ -101,7 +102,9 @@ class _HomePageState extends State<HomePage> {
             )
           : Column(
               children: [
-                Expanded(child: getBanner()),
+                Expanded(
+                  child: getBanner(),
+                ),
                 getHomeButtons(),
               ],
             ),

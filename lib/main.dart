@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mathappcd/constants/string_constants.dart';
+import 'package:mathappcd/database/db.dart';
 import 'package:mathappcd/screens/home.dart';
 
 void main() {
@@ -6,16 +8,30 @@ void main() {
 }
 
 class MathAppCD extends StatelessWidget {
-  const MathAppCD({super.key});
+  const MathAppCD({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const HomePage(),
+    return FutureBuilder(
+      future: Database.setAllDB(),
+      builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
+        if (snapshot.connectionState == ConnectionState.done) {
+          return const MaterialApp(
+            title: SC.mathAppTitle,
+            home: HomePage(),
+          );
+        } else {
+          // Make a loading screenr
+          return const MaterialApp(
+            title: SC.mathAppTitle,
+            home: Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
+            ),
+          );
+        }
+      },
     );
   }
 }
