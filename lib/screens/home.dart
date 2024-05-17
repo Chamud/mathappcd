@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
               directTo: Section(heading: "SectionC", items: getSectionAItems()),
             ),
             TextButton(
-                onPressed: () => {Database.getDB(SC.db1)},
+                onPressed: () => {Database.setAllDB()},
                 child: Text("Refresh DB"))
           ],
         ),
