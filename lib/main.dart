@@ -16,9 +16,10 @@ class MathAppCD extends StatelessWidget {
       future: Database.setAllDB(),
       builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
-          return const MaterialApp(
+          return MaterialApp(
             title: SC.mathAppTitle,
-            home: HomePage(),
+            theme: ThemeData(fontFamily: 'NotoSansSC'),
+            home: const HomePage(),
           );
         } else {
           // Make a loading screenr

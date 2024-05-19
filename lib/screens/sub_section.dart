@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mathappcd/models/subsection.dart';
 import 'package:mathappcd/screens/home.dart';
+import 'package:mathappcd/screens/question_set.dart';
 import 'package:mathappcd/widgets/app_bar.dart';
 import 'package:mathappcd/widgets/long_btn.dart';
 
@@ -33,13 +34,12 @@ class _SubSectionState extends State<SubSection> {
     List<LongBtn> btns = [];
     for (var each in sections) {
       LongBtn btn = LongBtn(
-        number: each.number,
-        text: each.name,
-        directTo: HomePage(),
-        // directTo: QuestionSet(
-        //   items: each.questionSets,
-        //   title: "${each.number} ${each.name}",)
-      );
+          number: each.number,
+          text: each.name,
+          directTo: QuestionSet(
+            items: each.questionSets,
+            title: "${each.number}  -  ${each.name}",
+          ));
       btns.add(btn);
     }
     return btns;
